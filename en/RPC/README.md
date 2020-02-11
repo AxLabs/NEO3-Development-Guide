@@ -7,8 +7,7 @@
     - [API Reference](#api-reference)
         - [Setting configuration](#setting-configuration)
         - [Listening ports](#listening-ports)
-        - [Command list](#command-list)
-        - [RpcServer.Wallet Methods](#rpcserverwallet-methods)
+        - [Methods List](#methods-list)
         - [An example of GET request](#an-example-of-get-request)
         - [An example of POST request](#an-example-of-post-request)
     - [Test tools](#test-tools)
@@ -67,7 +66,11 @@ For P2P and WebSocket port information, please refer to [Node Introduction](../.
 | JSON-RPC HTTPS | 10331    | 20331    |
 | JSON-RPC HTTP  | 10332    | 20332    |
 
-### RpcServer.Blockchain Methods
+### Methods List
+
+THe JSON-RPC methods are mostly exposed in the [neo-modules](https://github.com/neo-project/neo-modules) git repo.
+
+#### RpcServer.Blockchain Methods
 
 | Command                                         | Parameter                                   | Description                                                  | Remark                     |
 | ----------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------ | ---------------------------- |
@@ -86,7 +89,7 @@ For P2P and WebSocket port information, please refer to [Node Introduction](../.
 | [gettransactionheight](api/gettransactionheight.md)| \<txid>                                  | Return the block index in which the transaction is found. ||
 | [getvalidators](api/getvalidators.md)           |                                             | Get the information about the validators                        |                              |
 
-### RpcServer.Node Methods
+#### RpcServer.Node Methods
 
 | Command                                         | Parameter                                   | Description                                                  | Remark                     |
 | ----------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------ | ---------------------------- |
@@ -96,21 +99,21 @@ For P2P and WebSocket port information, please refer to [Node Introduction](../.
 | [sendrawtransaction](api/sendrawtransaction.md) | \<hex>                                      | Broadcast a transaction over the network. |                              |
 | [submitblock](api/submitblock.md)               | \<hex>                                      | Submit a new block to the network                             | Need to be a validator |
 
-### RpcServer.SmartContract Methods
+#### RpcServer.SmartContract Methods
 
 | Command                                         | Parameter                                   | Description                                                  | Remark                     |
 | ----------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------ | ---------------------------- |
 | [invokefunction](api/invokefunction.md)         | \<script_hash>  \<operation>  \<params>     | Invoke a smart contract with the specified script hash, passing in an operation and its params |                              |
 | [invokescript](api/invokescript.md)             | \<script>                                   | Run a script through the virtual machine and returns the results |                              |
 
-### RpcServer.Utilities Methods
+#### RpcServer.Utilities Methods
 
 | Command                                         | Parameter                                   | Description                                                  | Remark                     |
 | ----------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------ | ---------------------------- |
 | [listplugins](api/listplugins.md)               |                                             | Return a list of plugins loaded by the node||
 | [validateaddress](api/validateaddress.md)       | \<address>                                  | Verify whether the address is a valid NEO address             |                              |
 
-### RpcServer.Wallet Methods
+#### RpcServer.Wallet Methods
 
 | Command                                               | Parameter                                              | Description                                                  | Remark |
 | ----------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------ | ------ |
@@ -126,14 +129,14 @@ For P2P and WebSocket port information, please refer to [Node Introduction](../.
 | [sendmany](/api/rpcwallets/sendmany.md)               | \<outputs_array>              | Initiate multiple transfers to designated addresses in a transaction   |        |
 | [sendtoaddress](/api/rpcwallets/sendtoaddress.md)     | \<asset_id>\<address>\<value>  | Transfers to the specified address.                          |        |
 
-### RpcNep5Tracker Methods
+#### RpcNep5Tracker Methods
 
 | Command                                         | Parameter                                   | Description                                                  | Remark                     |
 | ----------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------ | ---------------------------- |
 | [getnep5transfers](api/getnep5transfers.md) | \<address> \<timestamp>                               | Return all the NEP-5 transaction information occurred in the specified address            |          | 
 | [getnep5balances](api/getnep5balances.md) | \<address>                               | Return the balance of all NEP-5 assets in the specified address           |          | 
 
-### ApplicationLogs Methods
+#### ApplicationLogs Methods
 
 | Command                                         | Parameter                                   | Description                                                  | Remark                     |
 | ----------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------ | ---------------------------- |
