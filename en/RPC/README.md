@@ -67,37 +67,48 @@ For P2P and WebSocket port information, please refer to [Node Introduction](../.
 | JSON-RPC HTTPS | 10331    | 20331    |
 | JSON-RPC HTTP  | 10332    | 20332    |
 
-### Command list
+### RpcServer.Blockchain Methods
 
 | Command                                         | Parameter                                   | Description                                                  | Remark                     |
 | ----------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------ | ---------------------------- |
 | [getbestblockhash](api/getbestblockhash.md)     |                                             | Get the hash of the latest block in the main chain         |                              |
 | [getblock](api/getblock.md)                     | \<hash> [verbose=0]                         | Return the block information with the specified hash value |                              |
-|  [getblock](api/getblock2.md)                                               | \<index> [verbose=0]                        | Return the block information with the specified index |                              |
+| [getblock](api/getblock2.md)                                               | \<index> [verbose=0]                        | Return the block information with the specified index |                              |
 | [getblockcount](api/getblockcount.md)           |                                             | Get the block count of the main chain                  |                              |
 | [getblockhash](api/getblockhash.md)             | \<index>                                    | Return the block hash with the specified index |                              |
 | [getblockheader](api/getblockheader.md)         | \<hash> [verbose=0]                         | Return the information of the block header with the specified script hash |                              |
-|  [getblockheader](api/getblockheader2.md)                                               | \<index> [verbose=0]                         | Return the information of the block header with the specified index |                              |
+| [getblockheader](api/getblockheader2.md)                                               | \<index> [verbose=0]                         | Return the information of the block header with the specified index |                              |
 | [getblocksysfee](api/getblocksysfee.md)         | \<index>                                    | Return the system fees before the block with the specified index |                              |
-| [getconnectioncount](api/getconnectioncount.md) |                                             | Get the current connection count of the node          |                              |
 | [getcontractstate](api/getcontractstate.md)     | \<script_hash>                              | Return information of the contract with the specified script hash |                              |
-| [getpeers](api/getpeers.md)                     |                                             | Get a list of nodes that are currently connected/disconnected by this node |                              |
 | [getrawmempool](api/getrawmempool.md)           | [shouldGetUnverified=0]               | Get a list of unconfirmed transactions in memory            |                              |
 | [getrawtransaction](api/getrawtransaction.md)   | \<txid> [verbose=0]                         | Return the transaction information with the specified hash value |                              |
 | [getstorage](api/getstorage.md)                 | \<script_hash>  \<key>                      | Return the value with the contract script hash and the key |                              |
 | [gettransactionheight](api/gettransactionheight.md)| \<txid>                                  | Return the block index in which the transaction is found. ||
 | [getvalidators](api/getvalidators.md)           |                                             | Get the information about the validators                        |                              |
+
+### RpcServer.Node Methods
+
+| Command                                         | Parameter                                   | Description                                                  | Remark                     |
+| ----------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------ | ---------------------------- |
+| [getconnectioncount](api/getconnectioncount.md) |                                             | Get the current connection count of the node          |                              |
+| [getpeers](api/getpeers.md)                     |                                             | Get a list of nodes that are currently connected/disconnected by this node |                              |
 | [getversion](api/getversion.md)                 |                                             | Get the version information of the node                        |                              |
-| [invokefunction](api/invokefunction.md)         | \<script_hash>  \<operation>  \<params>     | Invoke a smart contract with the specified script hash, passing in an operation and its params |                              |
-| [invokescript](api/invokescript.md)             | \<script>                                   | Run a script through the virtual machine and returns the results |                              |
-| [listplugins](api/listplugins.md)               |                                             | Return a list of plugins loaded by the node||
 | [sendrawtransaction](api/sendrawtransaction.md) | \<hex>                                      | Broadcast a transaction over the network. |                              |
 | [submitblock](api/submitblock.md)               | \<hex>                                      | Submit a new block to the network                             | Need to be a validator |
-| [validateaddress](api/validateaddress.md)       | \<address>                                  | Verify whether the address is a valid NEO address             |                              |
-| [getapplicationlog](api/getapplicationlog.md) | \<txid>                               | Return the contract log based on the specified txid            |          |  
-| [getnep5transfers](api/getnep5transfers.md) | \<address> \<timestamp>                               | Return all the NEP-5 transaction information occurred in the specified address            |          | 
-| [getnep5balances](api/getnep5balances.md) | \<address>                               | Return the balance of all NEP-5 assets in the specified address           |          | 
 
+### RpcServer.SmartContract Methods
+
+| Command                                         | Parameter                                   | Description                                                  | Remark                     |
+| ----------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------ | ---------------------------- |
+| [invokefunction](api/invokefunction.md)         | \<script_hash>  \<operation>  \<params>     | Invoke a smart contract with the specified script hash, passing in an operation and its params |                              |
+| [invokescript](api/invokescript.md)             | \<script>                                   | Run a script through the virtual machine and returns the results |                              |
+
+### RpcServer.Utilities Methods
+
+| Command                                         | Parameter                                   | Description                                                  | Remark                     |
+| ----------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------ | ---------------------------- |
+| [listplugins](api/listplugins.md)               |                                             | Return a list of plugins loaded by the node||
+| [validateaddress](api/validateaddress.md)       | \<address>                                  | Verify whether the address is a valid NEO address             |                              |
 
 ### RpcServer.Wallet Methods
 
@@ -115,6 +126,18 @@ For P2P and WebSocket port information, please refer to [Node Introduction](../.
 | [sendmany](/api/rpcwallets/sendmany.md)               | \<outputs_array>              | Initiate multiple transfers to designated addresses in a transaction   |        |
 | [sendtoaddress](/api/rpcwallets/sendtoaddress.md)     | \<asset_id>\<address>\<value>  | Transfers to the specified address.                          |        |
 
+### RpcNep5Tracker Methods
+
+| Command                                         | Parameter                                   | Description                                                  | Remark                     |
+| ----------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------ | ---------------------------- |
+| [getnep5transfers](api/getnep5transfers.md) | \<address> \<timestamp>                               | Return all the NEP-5 transaction information occurred in the specified address            |          | 
+| [getnep5balances](api/getnep5balances.md) | \<address>                               | Return the balance of all NEP-5 assets in the specified address           |          | 
+
+### ApplicationLogs Methods
+
+| Command                                         | Parameter                                   | Description                                                  | Remark                     |
+| ----------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------ | ---------------------------- |
+| [getapplicationlog](api/getapplicationlog.md) | \<txid>                               | Return the contract log based on the specified txid            |          |  
 
 
 ### An example of GET request
