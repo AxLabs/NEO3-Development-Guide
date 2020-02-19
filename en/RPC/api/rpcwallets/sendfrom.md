@@ -39,7 +39,7 @@ Request body：
 }
 ```
 
-Request body:
+Response body:
 
 ```json
 {
