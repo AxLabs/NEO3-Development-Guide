@@ -25,10 +25,7 @@ Response body:
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": {
-        "available": "0.140771",
-        "unavailable": "0.096224"
-    }
+    "result": "0.140771"
 }
 ```
 
